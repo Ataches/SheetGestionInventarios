@@ -5,7 +5,16 @@ function newVariableSheet(){
      validateVariables();
    }
 }
-
+function setDialogBox(){
+  var ui = SpreadsheetApp.getUi();
+  var result = ui.alert(
+    'Atención:',
+     'Se creará una nueva factura borrando los datos actuales ¿Desea continuar?',
+      ui.ButtonSet.YES_NO);
+  if (result == ui.Button.YES)
+    return true;  
+  return false;
+}
 
 function setSheetOnTable(name,range){
   var originSpreadsheet = getSheets(name);
@@ -36,5 +45,4 @@ function setSheetOnTable(name,range){
   
   var verticalHeaderRange = sheet.getRange(1,1,7,1)
       verticalHeaderRange.setTextStyle(style)
-
 }
