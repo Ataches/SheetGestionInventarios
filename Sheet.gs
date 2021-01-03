@@ -20,7 +20,7 @@ function setSheetOnTable(name,range){
   var originSpreadsheet = getSheets(name);
   var ss = SpreadsheetApp.getActiveSpreadsheet();
   var sheet = ss.getActiveSheet();
-  sheet.setName(name)
+  //sheet.setName(name)
   //se borra todo lo que este antes
   if(sheet.getLastColumn() != 0){
     var clearRange = sheet.getRange(1,1,sheet.getMaxRows(), sheet.getMaxColumns())

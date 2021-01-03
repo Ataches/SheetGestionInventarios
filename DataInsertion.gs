@@ -28,16 +28,16 @@ function insertIntoTable(range, tableName, tableId, ss) {
     
     var dateNow = Utilities.formatDate(new Date(), "GMT-5:00", "yyyy-MM-dd HH:mm:ss");
     var cont_1 = 0;
-    for each (items in data) {
+    for (items in data) {
         var cont_2 = 0;
-        for each (item in items) {
+        for (item in items) {
             if((typeof item) == 'object')
-            var item = Utilities.formatDate(item, "GMT-5:00", "yyyy-MM-dd HH:mm:ss");     
+              var item = Utilities.formatDate(item, "GMT-5:00", "yyyy-MM-dd HH:mm:ss");     
             
             if(cont_2 == items.length - 1)
-            csv += item + ',' + dateNow + '\n'
+              csv += item + ',' + dateNow + '\n'
             else
-            csv += item + ','
+              csv += item + ','
             cont_2 += 1;          
         }
         cont_1 += 1;

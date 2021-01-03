@@ -3,5 +3,6 @@ function onOpen() {
   
   ui.createMenu('Factura')
   .addItem('Crear nueva factura', 'newVariableSheet')
+  .addItem('Ingresar Datos', 'dataInsertion')
   .addToUi();
 }
