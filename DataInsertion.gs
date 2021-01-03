@@ -3,8 +3,8 @@ function dataInsertion(){
   if (validation){
     var ss = SpreadsheetApp.getActiveSheet();
     var currentTable = ss.getName(); 
-    var range = tableData[currentTable][1] //TableData.gs
-    insertIntoTable(range, tableData[currentTable][2], currentTable, ss)
+    var range = tableData[currentTable][0] //TableData.gs
+    insertIntoTable(range, tableData[currentTable], currentTable, ss)
   }
 }
 
