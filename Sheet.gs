@@ -1,7 +1,7 @@
 function newVariableSheet(){
    var validation = setDialogBox();
    if (validation){
-     setSheetOnTable('Clientes', 'A1:A300');
+     setSheetOnTable('Clientes', 'A1:A30');
      validateVariables();
    }
 }
@@ -20,7 +20,7 @@ function setSheetOnTable(name,range){
   var originSpreadsheet = getSheets(name);
   var ss = SpreadsheetApp.getActiveSpreadsheet();
   var sheet = ss.getActiveSheet();
-  //sheet.setName(name)
+
   //se borra todo lo que este antes
   if(sheet.getLastColumn() != 0){
     var clearRange = sheet.getRange(1,1,sheet.getMaxRows(), sheet.getMaxColumns())

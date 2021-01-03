@@ -8,11 +8,21 @@ function dataInsertion(){
   }
 }
 
+var tableData = {
+'Variable':[
+ {
+    fields: [
+       {name:'FechaModificacion' , type:'TIMESTAMP'}
+    ]
+  }
+  ]
+}  
+
 function setDialogBoxInsert(){
   var ui = SpreadsheetApp.getUi();
   var result = ui.alert(
     'Atención:',
-    'Si continuas se insertaran todos los datos que se encuentren dentro de la hoja de calculo en la plataforma Alto Maipo ¿Quieres seguir?',
+    'Si continuas se insertaran todos los datos ¿Desea continuar?',
     ui.ButtonSet.YES_NO);
   
   if (result == ui.Button.YES)
