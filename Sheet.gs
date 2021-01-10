@@ -2,7 +2,7 @@ function newVariableSheet(){
    var validation = setDialogBox();
    if (validation){
      setSheetOnTable('Clientes', 'A1:A30');
-     validateVariables();
+     validateData();
    }
 }
 function setDialogBox(){

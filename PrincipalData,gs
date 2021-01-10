@@ -1,0 +1,29 @@
+/*
+* Script to set the global variables that contains the sheets data 
+*/
+
+// -------------------- FILE DATA --------------------
+
+var data_url = 'https://docs.google.com/spreadsheets/d/19kyzj9wofHmO2vzOzKS8VpWK86MAtW6dX1bISj3MJIE/edit#gid=591899307';
+
+var data_ss = SpreadsheetApp.openByUrl(data_url);
+
+// Sheet customer 
+var customer_sheet = data_ss.getSheetByName('Clientes');
+
+// -------------------- FILE INVOICES --------------------
+var invoices_url = 'https://docs.google.com/spreadsheets/d/1w1za5G6b5UTifXzomz6wfE1T8HIQU2nTzh2STEWirKY/edit#gid=1560436126';
+var invoice_ss = SpreadsheetApp.openByUrl(invoices_url);
+
+// Sheet Invoice
+var invoice_sheet = invoice_ss.getSheetByName('Factura');
+var header_invoice = invoice_ss.getRangeByName('FacturaCabecera'); // Contains date and customer name, address, phone and city
+var range_body_invoice = invoice_ss.getRangeByName('FacturaCuerpo'); // Contains quantities, references, description, values
+    
+// Sheet Register Invoice
+var invoice_register_sheet = invoice_ss.getSheetByName('Registrar factura');
+
+// Sheet Register Invoice (ri) customer data - RFactura Registro factura (invoice register)
+var ri_customer_name = data_ss.getRangeByName('RFacturaNombre');
+var ri_customer_register_address = data_ss.getRangeByName('RFacturaDireccion');
+var ri_customer_register_phone = data_ss.getRangeByName('RFacturaTelefono');

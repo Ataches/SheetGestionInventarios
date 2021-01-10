@@ -1,15 +1,23 @@
 function dataInsertion(){
   var validation = setDialogBoxInsert();
   if (validation){
+    validateData();
     var ss = SpreadsheetApp.getActiveSheet();
     var currentTable = ss.getName(); 
-    var range = tableData[currentTable][0] //TableData.gs
-    insertIntoTable(range, tableData[currentTable], currentTable, ss)
+    var range = tableData[currentTable][1] //TableData.gs
+    insertIntoTable(range, tableData[currentTable], currentTable)
   }
 }
 
 var tableData = {
-'Variable':[
+'Registrar factura':[
+ {
+    fields: [
+       {name:'FechaModificacion' , type:'TIMESTAMP'}
+    ]
+  }
+  ],
+  'Datos':[
  {
     fields: [
        {name:'FechaModificacion' , type:'TIMESTAMP'}
@@ -31,7 +39,13 @@ function setDialogBoxInsert(){
 }
 
 
-function insertIntoTable(range, tableName, tableId, ss) {
+function insertIntoTable(range, tableName, tableId) {
+    var sheets = SpreadsheetApp.getActive().getSheets()
+    for (ssItem in sheets){
+      if(ssItem == tableId)
+        ss = ssItem
+    }
+    ss = sheets[0]
     //Se preparan los nuevos valores pra ser insertados
     var data = ss.getSheetValues(10, 2, ss.getLastRow() - 9, range)
     var csv = "";

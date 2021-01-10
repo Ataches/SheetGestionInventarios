@@ -1,0 +1,5 @@
+
+function setDataInInvoice(invoice_data) {
+  for (i in invoice_data)
+    Logger.log(i);
+}

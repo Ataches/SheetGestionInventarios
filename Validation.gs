@@ -19,3 +19,18 @@ function setDateRule(range){
               .build();
   date.setDataValidation(rule)   
 }
+
+//--------------------------------------------------------------
+// Validaciones datos
+function validateData(){
+  
+  var ss = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
+  
+  //Identificador
+  //setNameRule('B10:B');
+  
+  
+  //Fecha
+  setDateRule('B7:C7');
+  
+}
